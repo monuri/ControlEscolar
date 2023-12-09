@@ -1,0 +1,44 @@
+﻿@model ControlEscolar.Models.TblCicloGrupoMaterium
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TblCicloGrupoMaterium</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCicloxGrupoxMateria" />
+            <div class="form-group">
+                <label asp-for="FidCiclo" class="control-label"></label>
+                <select asp-for="FidCiclo" class="form-control" asp-items="ViewBag.FidCiclo"></select>
+                <span asp-validation-for="FidCiclo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FidGrupo" class="control-label"></label>
+                <select asp-for="FidGrupo" class="form-control" asp-items="ViewBag.FidGrupo"></select>
+                <span asp-validation-for="FidGrupo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FidMateria" class="control-label"></label>
+                <select asp-for="FidMateria" class="form-control" asp-items="ViewBag.FidMateria"></select>
+                <span asp-validation-for="FidMateria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
